@@ -35,7 +35,8 @@ struct ContentView: View {
                     }
                 }
             }
-            .listStyle(.plain)
+            .listStyle(.insetGrouped)
+//            .listStyle(.plain)
             .navigationTitle("Nuestro Menú")
             
         }
