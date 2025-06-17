@@ -19,6 +19,7 @@ class SWCart: ObservableObject {
     // 4. Un método para añadir productos al carrito.
     func add(_ product: SWProduct) {
         items.append(product)
+        print("\n\n  items count:  ---->>>> \(items.count) \n\n")
     }
     
     // 5. Un método para eliminar productos (será útil para la vista del carrito).

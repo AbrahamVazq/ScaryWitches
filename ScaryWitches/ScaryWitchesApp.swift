@@ -15,6 +15,7 @@ struct ScaryWitchesApp: App {
         
         WindowGroup {
             ContentView()
+                .environmentObject(cart)
         }
         
     }

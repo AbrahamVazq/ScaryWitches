@@ -32,6 +32,7 @@ struct SWProductDetailView: View {
                     
                     Button {
                         swCart.add(product)
+                        
                     } label: {
                         HStack {
                             Image(systemName: "cart.badge.plus")
@@ -67,5 +68,6 @@ struct SWProductDetailView: View {
     //    SWProductDetailView()
     NavigationStack {
         SWProductDetailView(product: SWProduct.sampleData[0])
+            .environmentObject(SWCart())
     }
 }
