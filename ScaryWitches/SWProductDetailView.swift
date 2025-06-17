@@ -7,9 +7,9 @@ import SwiftUI
 struct SWProductDetailView: View {
     
     let product: SWProduct
+    @EnvironmentObject private var swCart: SWCart
     
     var body: some View {
-//        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         
         ScrollView {
             
@@ -29,6 +29,24 @@ struct SWProductDetailView: View {
                     .foregroundStyle(.secondary)
                 
                 HStack {
+                    
+                    Button {
+                        swCart.add(product)
+                    } label: {
+                        HStack {
+                            Image(systemName: "cart.badge.plus")
+                            Text("Añadir al Carrito")
+                        }
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity) // Hace que el botón ocupe todo el ancho
+                        .padding()
+                        .background(Color.green)
+                        .foregroundStyle(.white)
+                        .cornerRadius(10)
+                    }
+                    
+                    
                     Spacer()
                     
                     Text(String(format: "%.2f", product.price))
@@ -46,7 +64,7 @@ struct SWProductDetailView: View {
 }
 
 #Preview {
-//    SWProductDetailView()
+    //    SWProductDetailView()
     NavigationStack {
         SWProductDetailView(product: SWProduct.sampleData[0])
     }
