@@ -14,7 +14,7 @@ struct ScaryWitchesApp: App {
     var body: some Scene {
         
         WindowGroup {
-            ContentView()
+            AppTabView()
                 .environmentObject(cart)
         }
         
